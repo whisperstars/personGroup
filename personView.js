@@ -53,7 +53,13 @@ function PersonView(elem) {
             addEvent(personal_tab, 'click', showTabContent.bind(this, 'personal'));
         }.bind(this);
 
-    this.start = function() {
+    function renderPersonEdit(){
+        var person_template = _.template($('#person_template').html());
+        elem.innerHTML = person_template(person.toJSON());
+    }
+
+    this.start = function(){
+        renderPersonEdit();
         eventHandler();
     };
 

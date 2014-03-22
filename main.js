@@ -1,4 +1,3 @@
-
 addEvent(window, 'load', function() {
     var person1 = new Person(),
         person2 = new Person(),
@@ -7,7 +6,9 @@ addEvent(window, 'load', function() {
         person_view = new PersonView(document.getElementById("person"));
 
         persons_group = new PersonsGroup(),
-        persons_group_view = new PersonsGroupView(document.getElementById('group'));
+        persons_group_view = new PersonsGroupView(document.getElementById('group')),
+
+        page_control_view = new PageControlView(document.getElementById('group'), document.getElementById("person"));
 
     person1.bulkSet(
         {
@@ -58,6 +59,7 @@ addEvent(window, 'load', function() {
     );
 
     person_view.setPerson(person1);
+    person_view.start();
     
     persons_group.addPerson(person1);
     persons_group.addPerson(person2);
@@ -67,4 +69,6 @@ addEvent(window, 'load', function() {
     persons_group_view.setPersonView(person_view);
     persons_group_view.setPersonsGroup(persons_group);
     persons_group_view.render();
+
+    page_control_view.start();
 });

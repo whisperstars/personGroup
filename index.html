@@ -14,6 +14,7 @@
     <script type="text/javascript" src="personView.js"></script>
     <script type="text/javascript" src="personGroup.js"></script>
     <script type="text/javascript" src="personGroupView.js"></script>
+    <script type="text/javascript" src="pageControlView.js"></script>
     <script type="text/javascript" src="main.js"></script>
 
     <!--TEMPLATES-->
@@ -45,7 +46,10 @@
                 </div>
             </div>
 
-            <div class="controll"><span class="btn_preview">Preview</span></div>
+            <div class="controll">
+                <span class="btn_save">Save</span>
+                <span class="btn_preview">Preview</span>
+            </div>
         </div>
 
         <div class="preview_page">
@@ -59,7 +63,10 @@
                 <legend>Sex: </legend><div class="preview_sex_field preview_field"><%= sex %></div>
             </div>
 
-            <div class="controll"><span class="btn_edit">Edit</span></div>
+            <div class="controll">
+                <span class="btn_save">Save</span>
+                <span class="btn_edit">Edit</span>
+            </div>
         </div>
     </script>
 
@@ -80,6 +87,7 @@
 <body>
     <div id="group">
     </div>
+
     <div id="person">
     </div>
 </body>

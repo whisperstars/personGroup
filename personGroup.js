@@ -11,6 +11,10 @@ function PersonsGroup() {
         persons.splice(id, 1);
     };
 
+    this.getPerson = function(id) {
+        return persons[id];
+    }
+
     this.getPersons = function() {
         return persons;
     };

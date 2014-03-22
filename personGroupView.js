@@ -7,8 +7,8 @@ function PersonsGroupView(elem) {
             btns_edit = elem.getElementsByClassName('btn_edit');
 
         function btnEditClick(id) {
-            elem.style.display = 'none';
-            
+            person_view.setPerson(persons_group.getPerson(Number(id)));
+            person_view.update();
         }
 
         for (i = 0; i < btns_edit.length; i++) {

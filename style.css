@@ -55,10 +55,18 @@
     float: right;
 }
 
+#person .btn_save{
+    float: left;
+}
+
 #person .tab_name{
     text-decoration: underline;
 }
 
 #person .tab_caption{
     padding: 0 2px;
+}
+
+#person{
+    display: none;
 }
