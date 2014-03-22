@@ -2,6 +2,25 @@ function PersonsGroupView(elem) {
     var persons_group,
         person_view;
 
+    function eventHandler() {
+        var i,
+            btns_edit = elem.getElementsByClassName('btn_edit');
+
+        function btnEditClick(id) {
+            elem.style.display = 'none';
+            
+        }
+
+        for (i = 0; i < btns_edit.length; i++) {
+            (function(i){
+                addEvent(btns_edit[i], 'click', function(){
+                        btnEditClick(btns_edit[i].classList[0]);
+                    }
+                );
+            })(i);
+        }
+    }
+
     this.setPersonsGroup = function(persons_group_instance) {
         persons_group = persons_group_instance;
 
@@ -22,10 +41,12 @@ function PersonsGroupView(elem) {
 
         for (i = 0; i < persons.length; i++) {
             person_view.setPerson(persons[i]);
-            table_body += person_view.render(i);
+            table_body += person_view.renderToGroup(i);
         };
 
         elem.innerHTML = group_template({'table_body': table_body});
+
+        eventHandler();
     };
 
     return this;

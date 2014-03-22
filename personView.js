@@ -77,7 +77,7 @@ function PersonView(elem) {
         return this;
     };
 
-    this.render = function(id) {
+    this.renderToGroup = function(id) {
         var person_item = _.template($('#person_item_template').html());
         
         return person_item({
