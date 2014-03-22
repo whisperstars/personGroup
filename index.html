@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Module 3 (Home Task)</title>
+    <meta charset="utf-8">
+    
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <script type="text/javascript" src="lib/jquery.js"></script>
+    <script type="text/javascript" src="lib/underscore.js"></script>
+    
+    <script type="text/javascript" src="utility.js"></script>
+    <script type="text/javascript" src="person.js"></script>
+    <script type="text/javascript" src="personView.js"></script>
+    <script type="text/javascript" src="personGroup.js"></script>
+    <script type="text/javascript" src="personGroupView.js"></script>
+    <script type="text/javascript" src="main.js"></script>
+
+    <!--TEMPLATES-->
+    <script type="text/html" id="person_template">
+        <div class="edit_page">
+            <div class="edit_content">
+                <div class="tabs">
+                    <div class="tab_name tab_caption">Name</div>
+                    <div class="tab_contacts tab_caption">Contacts</div>
+                    <div class="tab_personal tab_caption">Personal</div>
+                </div>
+
+                <div class="tabs_content">
+                    <div class="tab_name_content tab_content">
+                        <legend>Name</legend><input type="text" class="edit_name_field edit_field" value="<%= name %>">
+                        <legend>Last Name</legend><input type="text" class="edit_last_name_field edit_field" value="<%= last_name %>">
+                    </div>
+
+                    <div class="tab_contacts_content tab_content">
+                        <legend>Skype</legend><input type="text" class="edit_skype_field edit_field" value="<%= skype %>">
+                        <legend>Email</legend><input type="text" class="edit_email_field edit_field" value="<%= email %>">
+                        <legend>Phone</legend><input type="text" class="edit_phone_field edit_field" value="<%= phone %>">
+                    </div>
+
+                    <div class="tab_personal_content tab_content">
+                        <legend>Age</legend><input type="text" class="edit_age_field edit_field" value="<%= age %>">
+                        <legend>Sex</legend><input type="text" class="edit_sex_field edit_field" value="<%= sex %>">
+                    </div>
+                </div>
+            </div>
+
+            <div class="controll"><span class="btn_preview">Preview</span></div>
+        </div>
+
+        <div class="preview_page">
+            <div class="preview_content">
+                <legend>Name: </legend><div class="preview_name_field preview_field"><%= name %></div>
+                <legend>Last Name: </legend><div class="preview_last_name_field preview_field"><%= last_name %></div>
+                <legend>Skype: </legend><div class="preview_skype_field preview_field"><%= skype %></div>
+                <legend>Email: </legend><div class="preview_email_field preview_field"><%= email %></div>
+                <legend>Phone: </legend><div class="preview_phone_field preview_field"><%= phone %></div>
+                <legend>Age: </legend><div class="preview_age_field preview_field"><%= age %></div>
+                <legend>Sex: </legend><div class="preview_sex_field preview_field"><%= sex %></div>
+            </div>
+
+            <div class="controll"><span class="btn_edit">Edit</span></div>
+        </div>
+    </script>
+
+    <script type="text/html" id="person_item_template">
+        <tr>
+            <td><span class="name"><%= name %></span></td>
+            <td><button class="btn_edit person_<%= id %>">Edit</button></td>
+        </tr>
+    </script>
+
+    <script type="text/html" id="group_template">
+        <table class="group_table">
+            <%= table_body %>
+        </table>
+    </script>
+    
+</head>
+<body>
+    <div id="group">
+    </div>
+    <div id="person">
+    </div>
+</body>
+</html>

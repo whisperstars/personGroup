@@ -1,0 +1,64 @@
+#person .edit_page, #person .preview_page{
+    width: 258px;
+}
+
+#person .edit_content{
+    clear: both;
+    position: relative;
+    overflow: hidden;
+}
+
+#person .tabs, #person .tabs_content{
+    float: left;
+    position: relative;
+    overflow: hidden;
+}
+
+#person .tabs_content{
+    padding: 0 5px;
+    width: 186px;
+}
+
+#person .tab_contacts_content, #person .tab_personal_content, #person .preview_page{
+    display: none;
+}
+
+#person .edit_field{
+    /*border: 1px solid black;*/
+    padding: 0 2px;
+}
+
+#person .preview_content legend{
+    float: left;
+    width: 80px;
+}
+
+#person .preview_field{
+    clear: right;
+}
+
+#person .controll{
+    clear: both;
+}
+
+#person .tab_caption{
+    border: 1px solid black;
+    height: 44px;
+}
+
+#person .tabs_content{
+    border: 1px solid black;
+    height: 136px;
+}
+
+#person .btn_preview, #person .btn_edit{
+    float: right;
+}
+
+#person .tab_name{
+    text-decoration: underline;
+}
+
+#person .tab_caption{
+    padding: 0 2px;
+}
