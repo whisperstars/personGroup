@@ -7,14 +7,12 @@ function PageControlView(group_elem, person_elem, persons_group_view) {
             group_elem.style.display = 'none';
             person_elem.style.display = 'block';
 
-            person_elem.className += id;
+            person_elem.className = id;
         }
 
         function personBtnSaveClick() {
             group_elem.style.display = 'block';
             person_elem.style.display = 'none';
-
-            persons_group_view.update(Number(person_elem.className));
         }
 
         for (i = 0; i < group_btns_edit.length; i++) {

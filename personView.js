@@ -1,12 +1,14 @@
 function PersonView(elem) {
     var person,
-        eventHandler = function() {
-            var btn_preview = elem.getElementsByClassName('btn_preview')[0],
+        eventHandler = function(group_update) {
+            var i,
+                btn_preview = elem.getElementsByClassName('btn_preview')[0],
                 btn_edit = elem.getElementsByClassName('btn_edit')[0],
 
                 name_tab = elem.getElementsByClassName('tab_name')[0],
                 contacts_tab = elem.getElementsByClassName('tab_contacts')[0],
                 personal_tab = elem.getElementsByClassName('tab_personal')[0],
+                btns_save = elem.getElementsByClassName('btn_save');
 
                 active_tab_name = 'name',
                 inputs = {
@@ -45,8 +47,14 @@ function PersonView(elem) {
                     elem.getElementsByClassName(name + '_page')[0].style.display = 'block';
                 };
 
-                function personBtnSaveClick(){
+                function personBtnsSaveClick(group_update) {
+                    var i;
 
+                    for(i=0; i < inputs[active_tab_name].length; i++) {
+                        person.set(inputs[active_tab_name][i], elem.getElementsByClassName('edit_' + inputs[active_tab_name][i] + '_field')[0].value);
+                    }
+
+                    group_update(elem.className, person.get('name'));
                 }
 
             addEvent(btn_preview, 'click', showPage.bind(this, 'preview'));
@@ -55,6 +63,14 @@ function PersonView(elem) {
             addEvent(name_tab, 'click', showTabContent.bind(this, 'name'));
             addEvent(contacts_tab, 'click', showTabContent.bind(this, 'contacts'));
             addEvent(personal_tab, 'click', showTabContent.bind(this, 'personal'));
+
+            for (i = 0; i < btns_save.length; i++) {
+                addEvent(btns_save[i], 'click', function() {
+                        personBtnsSaveClick(group_update);
+                    }
+                );
+            };
+
         }.bind(this);
 
     function renderPersonEdit() {
@@ -62,9 +78,9 @@ function PersonView(elem) {
         elem.innerHTML = person_template(person.toJSON());
     }
 
-    this.start = function() {
+    this.start = function(group_update) {
         renderPersonEdit();
-        eventHandler();
+        eventHandler(group_update);
     };
 
     this.update = function() {

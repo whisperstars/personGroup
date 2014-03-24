@@ -49,8 +49,7 @@ function PersonsGroupView(elem) {
         eventHandler();
     };
 
-    this.update = function(id) {
-        var html = person_view.renderNameToGroup(id);
+    this.update = function(id, html) {
         $('.person_' + id).html(html);
     }
 

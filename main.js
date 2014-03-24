@@ -59,7 +59,7 @@ addEvent(window, 'load', function() {
     );
 
     person_view.setPerson(person1);
-    person_view.start();
+    person_view.start(persons_group_view.update);
     
     persons_group.addPerson(person1);
     persons_group.addPerson(person2);
