@@ -12,8 +12,8 @@ function PersonsGroupView(elem) {
         }
 
         for (i = 0; i < btns_edit.length; i++) {
-            (function(i){
-                addEvent(btns_edit[i], 'click', function(){
+            (function(i) {
+                addEvent(btns_edit[i], 'click', function() {
                         btnEditClick(btns_edit[i].classList[0]);
                     }
                 );
@@ -48,6 +48,12 @@ function PersonsGroupView(elem) {
 
         eventHandler();
     };
+
+    this.update = function(id) {
+        var html = person_view.renderToGroup(id);
+        console.log(html);
+        $('.person_' + id).replaceWith(html);
+    }
 
     return this;
 }

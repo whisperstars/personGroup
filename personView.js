@@ -45,6 +45,10 @@ function PersonView(elem) {
                     elem.getElementsByClassName(name + '_page')[0].style.display = 'block';
                 };
 
+                function personBtnSaveClick(){
+
+                }
+
             addEvent(btn_preview, 'click', showPage.bind(this, 'preview'));
             addEvent(btn_edit, 'click', showPage.bind(this, 'edit'));
 
@@ -53,12 +57,12 @@ function PersonView(elem) {
             addEvent(personal_tab, 'click', showTabContent.bind(this, 'personal'));
         }.bind(this);
 
-    function renderPersonEdit(){
+    function renderPersonEdit() {
         var person_template = _.template($('#person_template').html());
         elem.innerHTML = person_template(person.toJSON());
     }
 
-    this.start = function(){
+    this.start = function() {
         renderPersonEdit();
         eventHandler();
     };
@@ -73,7 +77,7 @@ function PersonView(elem) {
                 elem.getElementsByClassName('preview_' + property + '_field')[0].innerHTML = 'none';
             }
         }
-
+        
         return this;
     };
 

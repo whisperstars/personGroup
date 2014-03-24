@@ -8,7 +8,7 @@ addEvent(window, 'load', function() {
         persons_group = new PersonsGroup(),
         persons_group_view = new PersonsGroupView(document.getElementById('group')),
 
-        page_control_view = new PageControlView(document.getElementById('group'), document.getElementById("person"));
+        page_control_view = new PageControlView(document.getElementById('group'), document.getElementById("person"), persons_group_view);
 
     person1.bulkSet(
         {
