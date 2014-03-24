@@ -96,5 +96,9 @@ function PersonView(elem) {
         });
     };
 
+    this.renderNameToGroup = function(id){
+        return person.get('name');
+    }
+
     return this;
 }
